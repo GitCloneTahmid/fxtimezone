@@ -1,1173 +1,245 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THM Limited — Private Apparel Sourcing</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THM Limited | Global Apparel Buying House</title>
 
-```
-    body {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 17px;
-        line-height: 1.7;
-        color: #2c2c2c;
-        background: #ffffff;
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 50px;
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
     }
 
     header {
-        padding: 35px 0;
-        border-bottom: 1px solid #e8e8e8;
-        background: #ffffff;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    h1 {
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: 3px;
-        color: #000;
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     nav a {
-        color: #2c2c2c;
-        text-decoration: none;
-        margin-left: 35px;
-        font-size: 14px;
-        letter-spacing: 0.3px;
-        transition: color 0.2s;
-        font-weight: 400;
-    }
-
-    nav a:hover {
-        color: #000;
-    }
-
-    .hero {
-        padding: 140px 0;
-        background: #fafafa;
-        border-bottom: 1px solid #e8e8e8;
-    }
-
-    .hero h2 {
-        font-size: 44px;
-        font-weight: 300;
-        line-height: 1.4;
-        margin-bottom: 25px;
-        letter-spacing: -0.5px;
-        color: #000;
-        max-width: 800px;
-    }
-
-    .hero p {
-        font-size: 19px;
-        max-width: 650px;
-        color: #5a5a5a;
-        font-weight: 400;
+      margin-left: 24px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #111827;
     }
 
     section {
-        padding: 100px 0;
-        border-bottom: 1px solid #e8e8e8;
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    section:last-of-type {
-        border-bottom: none;
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 16px;
     }
 
     h3 {
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-        color: #999;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
     }
 
-    h4 {
-        font-size: 32px;
-        font-weight: 300;
-        margin-bottom: 35px;
-        line-height: 1.4;
-        color: #000;
-        letter-spacing: -0.3px;
+    p {
+      font-size: 15px;
+      color: #374151;
+      max-width: 780px;
     }
 
-    .content-wrapper {
-        max-width: 750px;
+    .hero {
+      padding: 120px 40px;
     }
 
-    .content-wrapper p {
-        color: #5a5a5a;
-        margin-bottom: 20px;
-    }
-
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        margin-top: 80px;
-        border-top: 1px solid #e8e8e8;
-        border-left: 1px solid #e8e8e8;
-    }
-
-    .stat-item {
-        padding: 50px 40px;
-        border-right: 1px solid #e8e8e8;
-        border-bottom: 1px solid #e8e8e8;
-    }
-
-    .stat-number {
-        font-size: 42px;
-        font-weight: 300;
-        color: #000;
-        margin-bottom: 12px;
-        letter-spacing: -1px;
-    }
-
-    .stat-label {
-        font-size: 14px;
-        color: #999;
-        letter-spacing: 0.3px;
+    .hero p {
+      font-size: 17px;
+      margin-top: 20px;
     }
 
     .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
-        margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
     }
 
-    .grid-item h5 {
-        font-size: 17px;
-        font-weight: 500;
-        margin-bottom: 12px;
-        color: #000;
+    .box {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 20px;
     }
 
-    .grid-item p {
-        color: #5a5a5a;
-        font-size: 16px;
-        line-height: 1.7;
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 40px;
+      align-items: center;
+      margin-top: 40px;
     }
 
-    .process {
-        max-width: 600px;
-        margin: 60px 0 0;
-    }
-
-    .process-step {
-        display: flex;
-        margin-bottom: 35px;
-        align-items: flex-start;
-    }
-
-    .process-number {
-        font-size: 13px;
-        font-weight: 500;
-        color: #999;
-        min-width: 45px;
-        letter-spacing: 0.5px;
-    }
-
-    .process-content p {
-        font-size: 16px;
-        color: #5a5a5a;
-    }
-
-    .certifications {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 40px;
-        margin-top: 60px;
-    }
-
-    .cert-item {
-        text-align: center;
-        padding: 30px 20px;
-        background: #fafafa;
-        border: 1px solid #e8e8e8;
-    }
-
-    .cert-item h5 {
-        font-size: 15px;
-        font-weight: 500;
-        color: #000;
-        margin-bottom: 8px;
-    }
-
-    .cert-item p {
-        font-size: 13px;
-        color: #999;
-        letter-spacing: 0.3px;
-    }
-
-    .clients-section {
-        background: #fafafa;
-    }
-
-    .clients-intro {
-        text-align: center;
-        max-width: 650px;
-        margin: 0 auto 70px;
-    }
-
-    .clients-intro p {
-        font-size: 18px;
-        color: #5a5a5a;
-    }
-
-    .logo-slider {
-        overflow: hidden;
-        position: relative;
-        padding: 60px 0;
-        background: #ffffff;
-    }
-
-    .logo-track {
-        display: flex;
-        animation: scroll 40s linear infinite;
-        width: fit-content;
-    }
-
-    .logo-item {
-        flex-shrink: 0;
-        width: 200px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 40px;
-        opacity: 0.6;
-        transition: opacity 0.3s;
-    }
-
-    .logo-item:hover {
-        opacity: 1;
-    }
-
-    .logo-item svg {
-        max-width: 160px;
-        max-height: 70px;
-        width: 100%;
-        height: auto;
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    .logo-slider:hover .logo-track {
-        animation-play-state: paused;
-    }
-
-    .location-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        max-width: 750px;
-        margin: 60px 0 0;
-    }
-
-    .location h5 {
-        font-size: 15px;
-        font-weight: 500;
-        margin-bottom: 15px;
-        color: #000;
-    }
-
-    .location p {
-        font-size: 16px;
-        color: #5a5a5a;
-        line-height: 1.8;
-    }
-
-    .location a {
-        color: #2c2c2c;
-        text-decoration: none;
-        border-bottom: 1px solid #2c2c2c;
-    }
-
-    .location a:hover {
-        color: #000;
-        border-bottom-color: #000;
+    .logos img {
+      max-width: 120px;
+      filter: grayscale(100%);
+      opacity: 0.85;
     }
 
     footer {
-        background: #000;
-        color: #fff;
-        padding: 60px 0;
-        text-align: center;
+      border-top: 1px solid #e5e7eb;
+      padding: 40px;
+      font-size: 13px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    footer p {
-        font-size: 13px;
-        color: #999;
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
     }
-
-    @media (max-width: 968px) {
-        .container {
-            padding: 0 30px;
-        }
-
-        .header-content {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        nav {
-            margin-top: 25px;
-        }
-
-        nav a {
-            margin-left: 0;
-            margin-right: 25px;
-        }
-
-        .hero {
-            padding: 80px 0;
-        }
-
-        .hero h2 {
-            font-size: 32px;
-        }
-
-        section {
-            padding: 70px 0;
-        }
-
-        h4 {
-            font-size: 26px;
-        }
-
-        .stats-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .grid {
-            grid-template-columns: 1fr;
-            gap: 35px;
-        }
-
-        .certifications {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .clients-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .location-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-    }
-</style>
-```
-
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>THM LIMITED</h1>
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#capabilities">Capabilities</a>
-                    <a href="#clients">Clients</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-```
+<body>
+
+<header>
+  <div class="logo">THM Limited</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+    <a href="login.html">Client Login</a>
+  </nav>
+</header>
+
 <section class="hero">
-    <div class="container">
-        <h2>Private apparel sourcing and production coordination for international brands</h2>
-        <p>We connect global buyers with vetted manufacturing facilities. Discreet execution built on established relationships and consistent delivery.</p>
-    </div>
+  <h1>Global Apparel Sourcing & Buying House</h1>
+  <p>
+    THM Limited connects international apparel brands with world-class manufacturing
+    partners across Asia. We operate as a high-volume buying house specializing in
+    quality control, cost optimization, and long-term factory relationships.
+  </p>
 </section>
 
 <section id="about">
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>Introduction</h3>
-            <h4>THM Limited operates as a private buying house between international apparel brands and manufacturing facilities across multiple regions.</h4>
-            <p>We handle sourcing, production coordination, and quality oversight for brands that require consistent execution at scale. Our work is built on long-term partnerships with both buyers and manufacturers, established through years of reliable delivery.</p>
-        </div>
+  <h2>About THM Limited</h2>
+  <p>
+    THM Limited is a privately operated buying house serving global apparel brands.
+    Our role is simple: secure the right factory, negotiate the right price, and
+    ensure consistent quality at scale. We do not own factories. We select the best
+    ones.
+  </p>
 
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">680K+</div>
-                <div class="stat-label">Units per month</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">25+</div>
-                <div class="stat-label">Countries served</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Global brands</div>
-            </div>
-        </div>
+  <div class="grid">
+    <div class="box">
+      <h3>Independent</h3>
+      <p>No factory ownership. No conflicts of interest.</p>
     </div>
+    <div class="box">
+      <h3>High Volume</h3>
+      <p>Hundreds of thousands of units monthly across multiple product categories.</p>
+    </div>
+    <div class="box">
+      <h3>Buyer-Focused</h3>
+      <p>We work for the buyer, not the mill.</p>
+    </div>
+  </div>
 </section>
 
-<section id="capabilities" style="background: #fafafa;">
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>What We Do</h3>
-            <h4>Focused capabilities across the production cycle</h4>
-            <div class="grid">
-                <div class="grid-item">
-                    <h5>Buyer Representation</h5>
-                    <p>Acting on behalf of international brands to secure production with qualified manufacturers that meet technical and compliance requirements.</p>
-                </div>
-                <div class="grid-item">
-                    <h5>Factory Sourcing & Vetting</h5>
-                    <p>Identifying and evaluating production facilities based on capacity, technical capability, certifications, and established performance records.</p>
-                </div>
-                <div class="grid-item">
-                    <h5>Production Coordination</h5>
-                    <p>Managing schedules, material sourcing, specification adherence, and communication between all parties throughout the production process.</p>
-                </div>
-                <div class="grid-item">
-                    <h5>Quality Assurance</h5>
-                    <p>Monitoring production standards, conducting inspections, and ensuring adherence to agreed specifications before shipment.</p>
-                </div>
-            </div>
-        </div>
+<section id="process">
+  <h2>How We Operate</h2>
+
+  <div class="grid">
+    <div class="box">
+      <h3>1. Client Acquisition</h3>
+      <p>
+        We work directly with established apparel brands and retail groups seeking
+        reliable, scalable manufacturing partners.
+      </p>
     </div>
+
+    <div class="box">
+      <h3>2. Factory Matching</h3>
+      <p>
+        Based on volume, fabric, compliance, and lead time, we match buyers with
+        pre-qualified factories.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>3. Price & Terms</h3>
+      <p>
+        We negotiate FOB pricing, payment terms, and production schedules on behalf
+        of the buyer.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>4. Execution</h3>
+      <p>
+        Factories handle production, logistics, and shipment. We monitor execution
+        and communication.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section>
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>How We Work</h3>
-            <h4>A structured approach to execution</h4>
-            <div class="process">
-                <div class="process-step">
-                    <div class="process-number">01</div>
-                    <div class="process-content">
-                        <p>Understand buyer requirements, technical specifications, volume expectations, and delivery timelines.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">02</div>
-                    <div class="process-content">
-                        <p>Match with suitable factories based on product type, capacity, technical capability, and compliance standards.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">03</div>
-                    <div class="process-content">
-                        <p>Coordinate production schedules, material procurement, sample approvals, and quality checkpoints.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">04</div>
-                    <div class="process-content">
-                        <p>Maintain direct communication with all parties, conduct inspections, and oversee shipment until final delivery.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<section id="clients">
+  <h2>Client Portfolio</h2>
+  <p>
+    THM Limited works with international brands across sportswear, lifestyle, and
+    mass-market apparel segments.
+  </p>
 
-<section style="background: #fafafa;">
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>Certifications & Compliance</h3>
-            <h4>Meeting international standards</h4>
-            <p>Our partner factories maintain certifications that meet the compliance requirements of international brands. We work exclusively with facilities that adhere to recognized standards for quality management, environmental responsibility, and social compliance.</p>
-        </div>
-
-        <div class="certifications">
-            <div class="cert-item">
-                <h5>ISO 9001</h5>
-                <p>Quality Management</p>
-            </div>
-            <div class="cert-item">
-                <h5>ISO 14001</h5>
-                <p>Environmental Management</p>
-            </div>
-            <div class="cert-item">
-                <h5>WRAP</h5>
-                <p>Social Compliance</p>
-            </div>
-            <div class="cert-item">
-                <h5>OEKO-TEX</h5>
-                <p>Product Safety</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="clients" class="clients-section">
-    <div class="container">
-        <div class="clients-intro">
-            <h3>Client Portfolio</h3>
-            <h4>Trusted by leading international brands</h4>
-            <p>We coordinate production for established athletic, fashion, and retail brands across North America, Europe, and Asia Pacific. Our clients require consistent quality, reliable delivery, and full transparency throughout the production process.</p>
-        </div>
-    </div>
-    
-    <div class="logo-slider">
-        <div class="logo-track">
-            <!-- Nike -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="none">
-                    <path d="M10 30 L35 15 L35 22 L15 32 Z" fill="black"/>
-                </svg>
-            </div>
-            
-            <!-- Adidas -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M15 35 L25 15 L32 15 L22 35 Z"/>
-                    <path d="M28 35 L38 15 L45 15 L35 35 Z"/>
-                    <path d="M41 35 L51 15 L58 15 L48 35 Z"/>
-                </svg>
-            </div>
-
-            <!-- Puma -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M15 25 Q20 15 30 20 Q35 23 35 28 Q35 32 30 32 Q25 32 20 28 L15 35 Z"/>
-                    <circle cx="32" cy="22" r="2" fill="black"/>
-                </svg>
-            </div>
-
-            <!-- Asics -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <circle cx="25" cy="25" r="12" fill="none" stroke="black" stroke-width="3"/>
-                    <path d="M25 17 L25 33 M17 25 L33 25" stroke="black" stroke-width="2"/>
-                </svg>
-            </div>
-
-            <!-- H&M -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="26" font-weight="bold" font-family="Arial, sans-serif">H&M</text>
-                </svg>
-            </div>
-
-            <!-- Zara -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="28" font-weight="300" font-family="'Didot', 'Times', serif" letter-spacing="4">ZARA</text>
-                </svg>
-            </div>
-
-            <!-- Uniqlo -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <rect x="15" y="15" width="25" height="20" fill="red"/>
-                    <text x="80" y="32" font-size="18" font-weight="500" font-family="Arial">UNIQLO</text>
-                </svg>
-            </div>
-
-            <!-- Calvin Klein -->
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <text x="20" y="28" font-size="22" font-weight="400" font-family="'Futura', Arial" letter-spacing="1">CALVIN KLEIN</text>
-                </svg>
-            </div>
-
-            <!-- Levi's -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M20 18 Q30 15 40 18 L38 32 Q30 35 22 32 Z" fill="red"/>
-                    <text x="60" y="30" font-size="20" font-weight="bold" font-family="Arial">LEVI'S</text>
-                </svg>
-            </div>
-
-            <!-- Gap -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <rect x="15" y="15" width="30" height="20" fill="#003087"/>
-                    <text x="65" y="32" font-size="24" font-weight="bold" font-family="Arial">GAP</text>
-                </svg>
-            </div>
-
-            <!-- Ralph Lauren -->
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <path d="M20 20 Q25 18 30 20 L28 25 Q25 23 22 25 Z" fill="none" stroke="black" stroke-width="1.5"/>
-                    <text x="40" y="28" font-size="14" font-weight="400" font-family="'Georgia', serif">Polo Ralph Lauren</text>
-                </svg>
-            </div>
-
-            <!-- Tommy Hilfiger -->
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <rect x="15" y="15" width="12" height="20" fill="#CE1126"/>
-                    <rect x="27" y="15" width="12" height="20" fill="#FFFFFF" stroke="black" stroke-width="0.5"/>
-                    <rect x="39" y="15" width="12" height="20" fill="#002868"/>
-                    <text x="60" y="28" font-size="14" font-weight="600" font-family="Arial">TOMMY HILFIGER</text>
-                </svg>
-            </div>
-
-            <!-- Fila -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="26" font-weight="bold" font-family="'Impact', Arial" letter-spacing="2">FILA</text>
-                </svg>
-            </div>
-
-            <!-- Under Armour -->
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <path d="M20 30 Q40 22 60 30" stroke="black" stroke-width="3" fill="none"/>
-                    <path d="M25 27 Q40 20 55 27" stroke="black" stroke-width="2" fill="none"/>
-                    <text x="70" y="28" font-size="14" font-weight="600" font-family="Arial">UNDER ARMOUR</text>
-                </svg>
-            </div>
-
-            <!-- New Balance -->
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <path d="M15 20 L20 30 L25 20" stroke="black" stroke-width="3" fill="none"/>
-                    <text x="35" y="28" font-size="16" font-weight="600" font-family="Arial">new balance</text>
-                </svg>
-            </div>
-
-            <!-- Reebok -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M15 25 L25 20 L35 25 L25 30 Z" fill="black"/>
-                    <path d="M28 25 L38 20 L48 25 L38 30 Z" fill="black"/>
-                    <path d="M41 25 L51 20 L61 25 L51 30 Z" fill="black"/>
-                </svg>
-            </div>
-
-            <!-- Lacoste -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <path d="M25 20 Q30 18 35 22 L40 25 Q42 28 38 32 L30 35 Q25 33 23 28 Z" fill="none" stroke="#00653E" stroke-width="2"/>
-                    <circle cx="33" cy="22" r="1.5" fill="#00653E"/>
-                </svg>
-            </div>
-
-            <!-- Gucci -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="26" font-weight="300" font-family="'Georgia', serif" letter-spacing="3">GUCCI</text>
-                </svg>
-            </div>
-
-            <!-- Versace -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <circle cx="50" cy="25" r="15" fill="none" stroke="black" stroke-width="2"/>
-                    <path d="M45 20 Q50 22 55 20 M45 30 Q50 28 55 30" stroke="black" stroke-width="1.5" fill="none"/>
-                </svg>
-            </div>
-
-            <!-- Boss -->
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="24" font-weight="bold" font-family="Arial" letter-spacing="4">BOSS</text>
-                </svg>
-            </div>
-
-            <!-- Duplicate set for seamless loop -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="none">
-                    <path d="M10 30 L35 15 L35 22 L15 32 Z" fill="black"/>
-                </svg>
-            </div>
-            
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M15 35 L25 15 L32 15 L22 35 Z"/>
-                    <path d="M28 35 L38 15 L45 15 L35 35 Z"/>
-                    <path d="M41 35 L51 15 L58 15 L48 35 Z"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M15 25 Q20 15 30 20 Q35 23 35 28 Q35 32 30 32 Q25 32 20 28 L15 35 Z"/>
-                    <circle cx="32" cy="22" r="2" fill="black"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <circle cx="25" cy="25" r="12" fill="none" stroke="black" stroke-width="3"/>
-                    <path d="M25 17 L25 33 M17 25 L33 25" stroke="black" stroke-width="2"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="26" font-weight="bold" font-family="Arial, sans-serif">H&M</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="28" font-weight="300" font-family="'Didot', 'Times', serif" letter-spacing="4">ZARA</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <rect x="15" y="15" width="25" height="20" fill="red"/>
-                    <text x="80" y="32" font-size="18" font-weight="500" font-family="Arial">UNIQLO</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <text x="20" y="28" font-size="22" font-weight="400" font-family="'Futura', Arial" letter-spacing="1">CALVIN KLEIN</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M20 18 Q30 15 40 18 L38 32 Q30 35 22 32 Z" fill="red"/>
-                    <text x="60" y="30" font-size="20" font-weight="bold" font-family="Arial">LEVI'S</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <rect x="15" y="15" width="30" height="20" fill="#003087"/>
-                    <text x="65" y="32" font-size="24" font-weight="bold" font-family="Arial">GAP</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <path d="M20 20 Q25 18 30 20 L28 25 Q25 23 22 25 Z" fill="none" stroke="black" stroke-width="1.5"/>
-                    <text x="40" y="28" font-size="14" font-weight="400" font-family="'Georgia', serif">Polo Ralph Lauren</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <rect x="15" y="15" width="12" height="20" fill="#CE1126"/>
-                    <rect x="27" y="15" width="12" height="20" fill="#FFFFFF" stroke="black" stroke-width="0.5"/>
-                    <rect x="39" y="15" width="12" height="20" fill="#002868"/>
-                    <text x="60" y="28" font-size="14" font-weight="600" font-family="Arial">TOMMY HILFIGER</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="26" font-weight="bold" font-family="'Impact', Arial" letter-spacing="2">FILA</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <path d="M20 30 Q40 22 60 30" stroke="black" stroke-width="3" fill="none"/>
-                    <path d="M25 27 Q40 20 55 27" stroke="black" stroke-width="2" fill="none"/>
-                    <text x="70" y="28" font-size="14" font-weight="600" font-family="Arial">UNDER ARMOUR</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="black">
-                    <path d="M15 20 L20 30 L25 20" stroke="black" stroke-width="3" fill="none"/>
-                    <text x="35" y="28" font-size="16" font-weight="600" font-family="Arial">new balance</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="black">
-                    <path d="M15 25 L25 20 L35 25 L25 30 Z" fill="black"/>
-                    <path d="M28 25 L38 20 L48 25 L38 30 Z" fill="black"/>
-                    <path d="M41 25 L51 20 L61 25 L51 30 Z" fill="black"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <path d="M25 20 Q30 18 35 22 L40 25 Q42 28 38 32 L30 35 Q25 33 23 28 Z" fill="none" stroke="#00653E" stroke-width="2"/>
-                    <circle cx="33" cy="22" r="1.5" fill="#00653E"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="26" font-weight="300" font-family="'Georgia', serif" letter-spacing="3">GUCCI</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <circle cx="50" cy="25" r="15" fill="none" stroke="black" stroke-width="2"/>
-                    <path d="M45 20 Q50 22 55 20 M45 30 Q50 28 55 30" stroke="black" stroke-width="1.5" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="black">
-                    <text x="50" y="32" text-anchor="middle" font-size="24" font-weight="bold" font-family="Arial" letter-spacing="4">BOSS</text>
-                </svg>
-            </div>
-        </div>
-    </div>20 Q30 18 35 25 Q30 32 20 30" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M42 15 L42 35 M42 15 L57 35 M57 15 L57 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M62 15 L62 35 M62 15 L77 35 M77 15 L77 35" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-
-            <!-- Duplicate for seamless loop -->
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="none">
-                    <path d="M8.5 10.5C8.5 7.73858 10.7386 5.5 13.5 5.5H38.5C41.2614 5.5 43.5 7.73858 43.5 10.5V39.5C43.5 42.2614 41.2614 44.5 38.5 44.5H13.5C10.7386 44.5 8.5 42.2614 8.5 39.5V10.5Z" stroke="black" stroke-width="2"/>
-                    <path d="M20 18L32 25L20 32V18Z" fill="black"/>
-                </svg>
-            </div>
-            
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="#000">
-                    <path d="M20 35 L30 12 L40 35 M25 28 L35 28" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M45 12 L55 35 M55 12 L45 35" stroke="black" stroke-width="2.5"/>
-                    <path d="M60 12 L60 35 M60 12 L72 35 M72 12 L72 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M77 12 L77 35 M77 23.5 L87 23.5 M87 12 L87 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <ellipse cx="97" cy="23.5" rx="8" ry="11.5" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M110 23.5 L110 35 M110 12 L120 35 M120 23.5 L120 35" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="#000">
-                    <path d="M15 12 Q20 25 15 35" stroke="black" stroke-width="3" fill="none"/>
-                    <path d="M25 18 L40 30" stroke="black" stroke-width="3.5"/>
-                    <path d="M25 30 L40 18" stroke="black" stroke-width="3.5"/>
-                    <path d="M45 12 Q50 25 45 35" stroke="black" stroke-width="3" fill="none"/>
-                    <rect x="55" y="12" width="2.5" height="23" fill="black"/>
-                    <path d="M67 12 L67 35 M67 12 L80 23.5 L67 35" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="#000">
-                    <rect x="10" y="15" width="25" height="20" fill="black"/>
-                    <path d="M42 20 L52 35 M52 20 L42 35" stroke="black" stroke-width="3"/>
-                    <path d="M60 15 L60 35 M60 15 L75 35 M75 15 L75 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M82 15 L82 35 M82 25 L95 25 M95 15 L95 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M102 15 Q107.5 25 102 35" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="#000">
-                    <text x="50" y="32" text-anchor="middle" font-size="22" font-weight="bold" font-family="Georgia, serif">H&M</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="#000">
-                    <text x="50" y="32" text-anchor="middle" font-size="24" font-weight="900" font-family="Arial, sans-serif" letter-spacing="2">ZARA</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="#000">
-                    <rect x="15" y="18" width="20" height="14" stroke="black" stroke-width="2" fill="none"/>
-                    <text x="80" y="32" text-anchor="middle" font-size="16" font-weight="500" font-family="Arial">UNIQLO</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 150 50" fill="#000">
-                    <text x="20" y="22" font-size="18" font-weight="900" font-family="Arial">Calvin Klein</text>
-                    <line x1="20" y1="28" x2="130" y2="28" stroke="black" stroke-width="1"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="#000">
-                    <path d="M15 15 L15 35 M15 15 L30 15 M15 25 L27 25" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M35 15 L35 35 M35 15 L50 35 M50 15 L50 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <ellipse cx="62" cy="25" rx="8" ry="10" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M72 35 L72 15 L85 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <rect x="90" y="15" width="2.5" height="20" fill="black"/>
-                    <path d="M95 25 Q100 15 105 25 Q100 35 95 25" fill="black"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="#000">
-                    <circle cx="30" cy="25" r="12" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M50 15 L50 35 M50 15 L62 28 L50 28" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M67 15 L67 35 M67 15 L79 15 M67 25 L76 25 M67 35 L79 35" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="#000">
-                    <text x="15" y="20" font-size="13" font-weight="600" font-family="Georgia, serif">Ralph Lauren</text>
-                    <path d="M15 27 Q70 22 125 27" stroke="black" stroke-width="1" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 160 50" fill="#000">
-                    <text x="20" y="22" font-size="15" font-weight="600" font-family="Arial">Tommy Hilfiger</text>
-                    <rect x="20" y="28" width="15" height="8" fill="#C8102E"/>
-                    <rect x="37" y="28" width="15" height="8" fill="white" stroke="#000" stroke-width="0.5"/>
-                    <rect x="54" y="28" width="15" height="8" fill="#012169"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="#000">
-                    <path d="M20 15 L20 35 M20 15 L35 15 M20 25 L33 25" stroke="black" stroke-width="2.5" fill="none"/>
-                    <rect x="40" y="15" width="2.5" height="20" fill="black"/>
-                    <path d="M47 15 L47 35 M47 15 L59 15 M47 25 L56 25 M47 35 L59 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M64 15 L64 35 M64 15 L76 28 L64 28" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="#000">
-                    <text x="20" y="25" font-size="16" font-weight="600" font-family="Arial">Under Armour</text>
-                    <path d="M20 32 Q70 27 120 32" stroke="black" stroke-width="2" fill="none"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="#000">
-                    <text x="25" y="25" font-size="16" font-weight="600" font-family="Arial">New Balance</text>
-                    <path d="M20 15 L25 32" stroke="black" stroke-width="2.5"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="#000">
-                    <path d="M20 15 L20 35 M20 15 L32 15 Q37 15 37 20 Q37 25 32 25 L20 25" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M42 15 L42 35 M42 15 L57 35 M57 15 L57 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M62 15 L62 35 M62 15 L77 35 M77 15 L77 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <rect x="82" y="15" width="2.5" height="20" fill="black"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="#000">
-                    <ellipse cx="60" cy="25" rx="35" ry="13" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M60 15 L60 35" stroke="black" stroke-width="2"/>
-                    <circle cx="60" cy="25" r="8" fill="black"/>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 120 50" fill="#000">
-                    <text x="60" y="30" text-anchor="middle" font-size="18" font-weight="700" font-family="Arial">SIDEMEN</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 140 50" fill="#000">
-                    <circle cx="35" cy="25" r="12" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M30 20 L35 25 L40 20" stroke="black" stroke-width="2" fill="none"/>
-                    <text x="55" y="30" font-size="16" font-weight="600" font-family="Arial">Feastables</text>
-                </svg>
-            </div>
-
-            <div class="logo-item">
-                <svg viewBox="0 0 100 50" fill="#000">
-                    <path d="M20 15 L20 35 M20 20 Q30 18 35 25 Q30 32 20 30" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M42 15 L42 35 M42 15 L57 35 M57 15 L57 35" stroke="black" stroke-width="2.5" fill="none"/>
-                    <path d="M62 15 L62 35 M62 15 L77 35 M77 15 L77 35" stroke="black" stroke-width="2.5" fill="none"/>
-                </svg>
-            </div>
-        </div>
-    </div>">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="500" font-family="Arial">Under Armour</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="500" font-family="Arial">New Balance</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" font-family="Arial">REEBOK</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="bold" font-family="Arial">LACOSTE</text>
-                </svg>
-            </div>
-            
-            <!-- Duplicate set for seamless loop -->
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="bold" font-family="Arial">NIKE</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="bold" font-family="Arial">adidas</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="bold" font-family="Arial">PUMA</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" font-family="Arial">ASICS</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="500" font-family="Arial">H&M</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="bold" font-family="Arial">ZARA</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="500" font-family="Arial">UNIQLO</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="bold" font-family="Arial">Calvin Klein</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="500" font-family="Arial">LEVI'S</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" font-family="Arial">GAP</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="500" font-family="Arial">Tommy Hilfiger</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" font-family="Arial">FILA</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="500" font-family="Arial">Under Armour</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="500" font-family="Arial">New Balance</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" font-family="Arial">REEBOK</text>
-                </svg>
-            </div>
-            <div class="logo-item">
-                <svg viewBox="0 0 200 60" fill="#000">
-                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="20" font-weight="bold" font-family="Arial">LACOSTE</text>
-                </svg>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>Team</h3>
-            <h4>Experience in merchandising, quality, and operations</h4>
-            <p>We are a focused team with backgrounds in production merchandising, quality control, compliance, and factory operations. We maintain direct relationships with both buyers and manufacturers to ensure clear communication and consistent execution.</p>
-        </div>
-    </div>
-</section>
-
-<section style="background: #fafafa;">
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>Leadership</h3>
-            <h4>Built on relationships and execution</h4>
-            <p>The company is led by a founder with experience in sales, client acquisition, and operational management within the apparel industry. The approach prioritizes building partnerships that deliver consistent results over multiple production cycles.</p>
-        </div>
-    </div>
+  <div class="logos">
+    <img src="logos/nike.png" alt="Nike">
+    <img src="logos/adidas.png" alt="Adidas">
+    <img src="logos/puma.png" alt="Puma">
+    <img src="logos/hm.png" alt="H&M">
+    <img src="logos/zara.png" alt="Zara">
+    <img src="logos/uniqlo.png" alt="Uniqlo">
+  </div>
 </section>
 
 <section id="contact">
-    <div class="container">
-        <div class="content-wrapper">
-            <h3>Contact</h3>
-            <h4>Dhaka office</h4>
-            <div class="location-grid">
-                <div class="location">
-                    <h5>Address</h5>
-                    <p>
-                        THM Limited<br>
-                        House 12, Road 8<br>
-                        Sector 4, Uttara<br>
-                        Dhaka 1230<br>
-                        Bangladesh
-                    </p>
-                </div>
-                <div class="location">
-                    <h5>Email</h5>
-                    <p><a href="mailto:contact@thmlimited.com">contact@thmlimited.com</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <h2>Contact</h2>
+  <p>
+    Business inquiries are handled by appointment only.
+  </p>
+  <p style="margin-top:16px;">
+    Email: business@thmlimited.com<br>
+    Location: Dhaka, Bangladesh
+  </p>
 </section>
 
 <footer>
-    <div class="container">
-        <p>© 2025 THM Limited. All rights reserved.</p>
-    </div>
+  <div>© 2025 THM Limited. All rights reserved.</div>
+  <div>Private buying house</div>
 </footer>
-```
 
 </body>
 </html>
