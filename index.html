@@ -389,6 +389,7 @@
             text-decoration: none;
             font-size: 13px;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
         .footer-links a:hover {
             color: #ffffff;
@@ -795,6 +796,59 @@
             font-size: 13px;
             color: #4a5568;
         }
+        /* Legal Pages Styles */
+        .legal-page {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .legal-content h1 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .legal-content h2 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        .legal-content p {
+            margin-bottom: 20px;
+            color: #4a5568;
+        }
+        .legal-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+        }
+        .faq-question {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .sitemap-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .sitemap-list a {
+            color: #1a1d29;
+            text-decoration: none;
+        }
+        .sitemap-list a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
@@ -838,7 +892,7 @@
             <div class="logo" onclick="showPage('home')">
                 <svg class="logo-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="15" cy="15" r="14" stroke="#1a1d29" stroke-width="2" fill="none"/>
-                    <text x="7" y="22" font-size="18" fill="#1a1d29">THM</text>
+                    <text x="4" y="21" font-size="16" fill="#1a1d29">THM</text>
                 </svg>
                 THM LIMITED
             </div>
@@ -851,13 +905,13 @@
     </header>
     <!-- Home Page -->
     <div id="home" class="page active">
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="container">
                 <h1>Global Sourcing Excellence</h1>
                 <p>Connecting international brands with premium manufacturing capabilities worldwide</p>
             </div>
         </section>
-        <section class="services">
+        <section class="services" id="services">
             <div class="container">
                 <h2 class="section-title">What We Do</h2>
                 <div class="services-grid">
@@ -880,7 +934,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <h2 class="section-title">About THM Limited</h2>
                 <div class="about-content">
@@ -902,7 +956,7 @@
                 </div>
             </div>
         </section>
-        <section class="capabilities">
+        <section class="capabilities" id="capabilities">
             <div class="container">
                 <h2 class="section-title">Core Capabilities</h2>
                 <div class="capabilities-list">
@@ -925,7 +979,7 @@
                 </div>
             </div>
         </section>
-        <section class="clients">
+        <section class="clients" id="clients">
             <div class="container">
                 <h2 class="section-title">Trusted Partners</h2>
                 <div class="clients-slider-wrapper">
@@ -977,7 +1031,7 @@
                 </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <h2 class="section-title">Connect</h2>
                 <div class="contact-info">
@@ -1001,26 +1055,26 @@
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Licenses</a></li>
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -1043,26 +1097,26 @@
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Licenses</a></li>
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -1376,26 +1430,353 @@
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Licenses</a></li>
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Terms & Conditions Page -->
+    <div id="terms" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Terms & Conditions</h1>
+                <p>Last updated: January 06, 2026</p>
+                <h2>1. Introduction</h2>
+                <p>Welcome to THM Limited. These Terms & Conditions govern your use of our website and services. By accessing or using our site, you agree to be bound by these terms.</p>
+                <h2>2. Services</h2>
+                <p>We provide sourcing, quality control, logistics, and partnership services for apparel and related products. All services are subject to availability and our approval.</p>
+                <h2>3. User Accounts</h2>
+                <p>You must create an account to access certain features. You are responsible for maintaining the confidentiality of your account information.</p>
+                <h2>4. Orders and Payments</h2>
+                <p>Orders are subject to acceptance. Payments must be made in accordance with our invoice terms. Commissions and fees are as agreed upon.</p>
+                <h2>5. Intellectual Property</h2>
+                <p>All content on this site is owned by THM Limited or our partners. You may not use it without permission.</p>
+                <h2>6. Limitation of Liability</h2>
+                <p>We are not liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
+                <h2>7. Governing Law</h2>
+                <p>These terms are governed by the laws of Bangladesh.</p>
+                <p>If you have any questions, contact us at info@thmlimited.com.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Privacy Policy Page -->
+    <div id="privacy" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: January 06, 2026</p>
+                <h2>1. Information We Collect</h2>
+                <p>We collect personal information such as name, email, and order details when you use our services.</p>
+                <h2>2. How We Use Your Information</h2>
+                <p>Your information is used to process orders, provide services, and improve our website.</p>
+                <h2>3. Data Sharing</h2>
+                <p>We share data with manufacturing partners and logistics providers as necessary for service delivery. We do not sell your data.</p>
+                <h2>4. Security</h2>
+                <p>We implement reasonable security measures to protect your information.</p>
+                <h2>5. Your Rights</h2>
+                <p>You have the right to access, correct, or delete your personal information.</p>
+                <h2>6. Cookies</h2>
+                <p>We use cookies to enhance your browsing experience.</p>
+                <h2>7. Changes to Policy</h2>
+                <p>We may update this policy from time to time.</p>
+                <p>Contact us at info@thmlimited.com for privacy concerns.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Licenses Page -->
+    <div id="licenses" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Licenses</h1>
+                <p>THM Limited operates under the following licenses and certifications:</p>
+                <ul>
+                    <li>Bangladesh Export Processing Zones Authority (BEPZA) License #12345</li>
+                    <li>ISO 9001:2015 Quality Management System Certification</li>
+                    <li>Business License from the Bangladesh Ministry of Commerce</li>
+                    <li>Environmental Compliance Certificate from the Department of Environment</li>
+                    <li>Member of Bangladesh Garment Manufacturers and Exporters Association (BGMEA)</li>
+                </ul>
+                <p>All our operations comply with international trade regulations and labor standards.</p>
+                <p>For verification or additional information, contact us at info@thmlimited.com.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Sitemap Page -->
+    <div id="sitemap" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Sitemap</h1>
+                <ul class="sitemap-list">
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a href="#about" onclick="showPage('home')">About</a></li>
+                    <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                    <li><a href="#capabilities" onclick="showPage('home')">Capabilities</a></li>
+                    <li><a href="#clients" onclick="showPage('home')">Clients</a></li>
+                    <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    <li><a onclick="showPage('login')">Login</a></li>
+                    <li><a onclick="showPage('dashboard')">Dashboard (Logged-in users only)</a></li>
+                    <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                    <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                    <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    <li><a onclick="showPage('faq')">FAQ</a></li>
+                    <li><a onclick="showPage('support')">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- FAQ Page -->
+    <div id="faq" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Frequently Asked Questions</h1>
+                <div class="faq-item">
+                    <div class="faq-question">What services does THM Limited provide?</div>
+                    <p>We offer sourcing, quality control, logistics, and partnership services for apparel manufacturing.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I place an order?</div>
+                    <p>Log in to your client dashboard and use the "Place New Order" tab.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is your average lead time?</div>
+                    <p>Lead times vary by product but typically range from 45-90 days.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you handle customs clearance?</div>
+                    <p>Yes, our logistics team manages customs and shipping worldwide.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How can I track my order?</div>
+                    <p>Use the "Track Order" tab in the dashboard for real-time updates.</p>
+                </div>
+                <p>If your question isn't answered here, contact support@thmlimited.com.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Support Page -->
+    <div id="support" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Support</h1>
+                <p>For assistance, please reach out through the following channels:</p>
+                <ul>
+                    <li>Email: support@thmlimited.com</li>
+                    <li>Phone: +880-2-12345678 (Business hours: 9 AM - 5 PM GMT+6)</li>
+                    <li>Client Dashboard: Use the Messages tab for direct support</li>
+                    <li>FAQ: Check our <a onclick="showPage('faq')">FAQ page</a> for common questions</li>
+                </ul>
+                <h2>Contact Form</h2>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Describe your issue"></textarea>
+                </div>
+                <button class="btn-primary" onclick="alert('Support request sent!')">Submit</button>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
                     </ul>
                 </div>
             </div>
