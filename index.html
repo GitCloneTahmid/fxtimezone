@@ -34,6 +34,7 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: top 0.3s ease; /* Smooth disappear/reappear */
         }
         .nav-container {
             max-width: 1200px;
@@ -547,18 +548,19 @@
         .tab-content.active {
             display: block;
         }
-        /* Cards */
+        /* Cards - Improved with better shadowing and subtle color */
         .card {
             background: #ffffff;
             padding: 30px;
             border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Slightly deeper base shadow */
             margin-bottom: 20px;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
         }
         .card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Enhanced hover shadow for depth */
             transform: translateY(-3px);
+            background-color: #fdfdfd; /* Subtle color shift for better visual feedback */
         }
         .card-header {
             display: flex;
@@ -883,11 +885,18 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+            /* Adjust clients slider for mobile */
+            .clients-slider {
+                animation: slide 30s linear infinite; /* Slower animation for better visibility */
+            }
+            .logo-item {
+                min-width: 120px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="mainHeader">
         <div class="nav-container">
             <div class="logo" onclick="showPage('home')">
                 <svg class="logo-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -1841,6 +1850,20 @@
                     }
                 });
             }
+            // Mobile nav disappear on scroll
+            let lastScroll = 0;
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (window.innerWidth <= 768) { // Only on mobile
+                    if (currentScroll > lastScroll && currentScroll > 100) {
+                        header.style.top = '-100px'; // Hide
+                    } else {
+                        header.style.top = '0'; // Show
+                    }
+                    lastScroll = currentScroll;
+                }
+            });
         });
         // Dashboard tabs
         function switchTab(tabId) {
