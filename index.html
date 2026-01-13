@@ -19,13 +19,12 @@
             background: #f8f9fa;
             color: #1a1d29;
             line-height: 1.6;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
         }
         body::-webkit-scrollbar {
-            display: none;
+            display: none; /* Chrome, Safari, Opera */
         }
-        
         /* Header */
         header {
             background: #ffffff;
@@ -35,7 +34,7 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            transition: top 0.3s ease;
+            transition: top 0.3s ease; /* Smooth disappear/reappear */
         }
         .nav-container {
             max-width: 1200px;
@@ -109,7 +108,6 @@
             margin: 0 auto;
             padding: 0 40px;
         }
-        
         /* Pages */
         .page {
             display: none;
@@ -117,7 +115,6 @@
         .page.active {
             display: block;
         }
-        
         /* Hero Section */
         .hero {
             background: #ffffff;
@@ -143,7 +140,6 @@
             max-width: 600px;
             margin: 0 auto;
         }
-        
         /* Services Section */
         .services {
             padding: 100px 0;
@@ -185,7 +181,6 @@
             line-height: 1.8;
             font-weight: 300;
         }
-        
         /* About Section */
         .about {
             padding: 100px 0;
@@ -228,7 +223,6 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-        
         /* Capabilities Section */
         .capabilities {
             padding: 100px 0;
@@ -264,7 +258,6 @@
             color: #718096;
             font-weight: 300;
         }
-        
         /* Clients Section */
         .clients {
             padding: 100px 0;
@@ -282,6 +275,17 @@
             display: flex;
             width: max-content;
             animation: slide 20s linear infinite;
+        }
+        .client-logo {
+            min-width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #a0aec0;
+            letter-spacing: 3px;
+            font-weight: 400;
         }
         .logo-item {
             min-width: 180px;
@@ -312,7 +316,6 @@
                 transform: translateX(-50%);
             }
         }
-        
         /* Contact Section */
         .contact {
             padding: 100px 0;
@@ -348,7 +351,6 @@
         .contact-item:hover svg {
             fill: #1a1d29;
         }
-        
         /* Footer */
         footer {
             background: #1a1d29;
@@ -401,7 +403,6 @@
             width: 100%;
             text-align: center;
         }
-        
         /* Login Page */
         .login-page {
             min-height: calc(100vh - 200px);
@@ -413,16 +414,15 @@
         .login-box {
             background: #ffffff;
             padding: 50px 60px;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 2px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
             text-align: center;
             max-width: 400px;
             width: 90%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
         .login-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
         }
         .login-box h2 {
             font-size: 24px;
@@ -446,7 +446,6 @@
             font-size: 14px;
             transition: all 0.3s ease;
             color: #1a1d29;
-            border-radius: 4px;
         }
         .login-box input:focus {
             outline: none;
@@ -463,13 +462,11 @@
             font-size: 14px;
             letter-spacing: 1px;
             transition: background 0.3s ease, transform 0.3s ease;
-            border-radius: 4px;
         }
         .login-box button:hover {
             background: #2d3748;
             transform: translateY(-2px);
         }
-        
         /* Dashboard */
         .dashboard {
             padding: 60px 0;
@@ -498,23 +495,20 @@
             margin-bottom: 40px;
         }
         .stat-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e1e4e8;
+            transition: transform 0.3s ease;
         }
         .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
         }
         .stat-card .stat-number {
             font-size: 32px;
             color: #1a1d29;
             margin-bottom: 5px;
-            font-weight: 500;
         }
         .stat-card .stat-label {
             font-size: 12px;
@@ -554,36 +548,19 @@
         .tab-content.active {
             display: block;
         }
-        
-        /* Enhanced Cards */
+        /* Cards - Improved with better shadowing and subtle color */
         .card {
-            background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+            background: #ffffff;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Slightly deeper base shadow */
             margin-bottom: 20px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid #e1e4e8;
-            position: relative;
-            overflow: hidden;
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s ease;
-        }
-        .card:hover::before {
-            left: 100%;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
         }
         .card:hover {
-            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-            transform: translateY(-8px) scale(1.02);
-            border-color: #1a1d29;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Enhanced hover shadow for depth */
+            transform: translateY(-3px);
+            background-color: #fdfdfd; /* Subtle color shift for better visual feedback */
         }
         .card-header {
             display: flex;
@@ -606,29 +583,23 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 500;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
         }
         .status-badge.in-transit {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            background: #e3f2fd;
             color: #1565c0;
         }
         .status-badge.processing {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            background: #fff3e0;
             color: #ef6c00;
         }
         .status-badge.delivered {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            background: #e8f5e9;
             color: #2e7d32;
         }
         .status-badge.pending {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            background: #f3e5f5;
             color: #6a1b9a;
         }
-        
         /* Order Details */
         .order-details {
             display: grid;
@@ -652,7 +623,6 @@
             color: #1a1d29;
             font-weight: 500;
         }
-        
         /* Form Styles */
         .form-group {
             margin-bottom: 25px;
@@ -676,7 +646,6 @@
             color: #1a1d29;
             transition: all 0.3s ease;
             font-family: inherit;
-            border-radius: 4px;
         }
         .form-group input:focus,
         .form-group select:focus,
@@ -684,7 +653,6 @@
             outline: none;
             border-color: #4a5568;
             background: white;
-            box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.1);
         }
         .form-group textarea {
             min-height: 120px;
@@ -703,13 +671,12 @@
             cursor: pointer;
             font-size: 13px;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border-radius: 4px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border-radius: 2px;
         }
         .btn-primary:hover {
             background: #2d3748;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         .btn-secondary {
             padding: 12px 30px;
@@ -720,14 +687,13 @@
             font-size: 13px;
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            border-radius: 4px;
+            border-radius: 2px;
         }
         .btn-secondary:hover {
             border-color: #1a1d29;
             color: #1a1d29;
             transform: translateY(-2px);
         }
-        
         /* Messages */
         .message-list {
             max-height: 400px;
@@ -737,24 +703,12 @@
         .message-item {
             padding: 15px;
             margin-bottom: 10px;
-            border-radius: 8px;
+            border-radius: 4px;
             background: #f8f9fa;
-            transition: all 0.3s ease;
-            animation: slideIn 0.3s ease;
-        }
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            transition: background 0.3s ease;
         }
         .message-item:hover {
             background: #e3f2fd;
-            transform: translateX(5px);
         }
         .message-item.sent {
             background: #e3f2fd;
@@ -792,10 +746,7 @@
             border: 1px solid #e1e4e8;
             background: #f8f9fa;
             font-size: 14px;
-            border-radius: 4px;
         }
-        
-        /* Timeline */
         .tracking-timeline {
             position: relative;
             padding-left: 40px;
@@ -817,8 +768,6 @@
             height: 12px;
             border-radius: 50%;
             background: #1a1d29;
-            box-shadow: 0 0 0 4px rgba(26, 29, 41, 0.1);
-            animation: pulse 2s ease-in-out infinite;
         }
         .timeline-item:after {
             content: '';
@@ -827,7 +776,7 @@
             top: 20px;
             width: 2px;
             height: calc(100% - 10px);
-            background: linear-gradient(180deg, #1a1d29 0%, #e1e4e8 100%);
+            background: #e1e4e8;
         }
         .timeline-item:last-child:after {
             display: none;
@@ -849,180 +798,7 @@
             font-size: 13px;
             color: #4a5568;
         }
-        
-        /* Analytics Section */
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .chart-placeholder {
-            background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
-            height: 250px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #718096;
-            font-size: 14px;
-            border: 2px dashed #cbd5e0;
-        }
-        
-        /* Document List */
-        .document-list {
-            display: grid;
-            gap: 15px;
-        }
-        .document-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 1px solid #e1e4e8;
-        }
-        .document-item:hover {
-            background: #e3f2fd;
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .document-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .doc-icon {
-            width: 40px;
-            height: 40px;
-            background: #1a1d29;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-        }
-        .doc-details h4 {
-            font-size: 14px;
-            color: #1a1d29;
-            margin-bottom: 3px;
-        }
-        .doc-details p {
-            font-size: 12px;
-            color: #718096;
-        }
-        
-        /* Invoice Table */
-        .invoice-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .invoice-table th,
-        .invoice-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e1e4e8;
-        }
-        .invoice-table th {
-            background: #f8f9fa;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #718096;
-            font-weight: 500;
-        }
-        .invoice-table td {
-            font-size: 14px;
-            color: #1a1d29;
-        }
-        .invoice-table tr:hover {
-            background: #f8f9fa;
-        }
-        .payment-status {
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 11px;
-            font-weight: 500;
-        }
-        .payment-status.paid {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-        .payment-status.pending {
-            background: #fff3e0;
-            color: #ef6c00;
-        }
-        .payment-status.overdue {
-            background: #ffebee;
-            color: #c62828;
-        }
-        
-        /* Modal/Popup */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-content {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: slideUp 0.3s ease;
-        }
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e1e4e8;
-        }
-        .modal-close {
-            cursor: pointer;
-            font-size: 24px;
-            color: #718096;
-            transition: color 0.3s ease;
-        }
-        .modal-close:hover {
-            color: #1a1d29;
-        }
-        
-        /* Legal Pages */
+        /* Legal Pages Styles */
         .legal-page {
             padding: 80px 0;
             background: #f8f9fa;
@@ -1075,22 +851,28 @@
         .sitemap-list a:hover {
             text-decoration: underline;
         }
-        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 32px;
             }
+           
             .container, .nav-container {
                 padding: 0 20px;
             }
+           
             .nav-links {
                 gap: 20px;
             }
+           
             .about-grid, .services-grid {
                 gap: 40px;
             }
+            .client-logo {
+                min-width: 150px;
+                font-size: 20px;
+            }
             .logo-item {
-                min-width: 120px;
+                min-width: 140px;
                 height: 60px;
             }
             .logo-item img {
@@ -1103,8 +885,12 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+            /* Adjust clients slider for mobile */
             .clients-slider {
-                animation: slide 30s linear infinite;
+                animation: slide 30s linear infinite; /* Slower animation for better visibility */
+            }
+            .logo-item {
+                min-width: 120px;
             }
         }
     </style>
@@ -1126,7 +912,6 @@
             </div>
         </div>
     </header>
-
     <!-- Home Page -->
     <div id="home" class="page active">
         <section class="hero" id="hero">
@@ -1135,7 +920,6 @@
                 <p>Connecting international brands with premium manufacturing capabilities worldwide</p>
             </div>
         </section>
-
         <section class="services" id="services">
             <div class="container">
                 <h2 class="section-title">What We Do</h2>
@@ -1159,7 +943,6 @@
                 </div>
             </div>
         </section>
-
         <section class="about" id="about">
             <div class="container">
                 <h2 class="section-title">About THM Limited</h2>
@@ -1182,7 +965,6 @@
                 </div>
             </div>
         </section>
-
         <section class="capabilities" id="capabilities">
             <div class="container">
                 <h2 class="section-title">Core Capabilities</h2>
@@ -1206,7 +988,6 @@
                 </div>
             </div>
         </section>
-
         <section class="clients" id="clients">
             <div class="container">
                 <h2 class="section-title">Trusted Partners</h2>
@@ -1275,7 +1056,6 @@
                 </div>
             </div>
         </section>
-
         <section class="contact" id="contact">
             <div class="container">
                 <h2 class="section-title">Connect</h2>
@@ -1295,7 +1075,6 @@
                 </div>
             </div>
         </section>
-
         <footer>
             <div class="footer-container">
                 <div class="footer-section">
@@ -1327,7 +1106,6 @@
             <p>© 2026 THM Limited. All Rights Reserved.</p>
         </footer>
     </div>
-
     <!-- Login Page -->
     <div id="login" class="page">
         <div class="login-page">
@@ -1370,3 +1148,791 @@
             <p>© 2026 THM Limited. All Rights Reserved.</p>
         </footer>
     </div>
+    <!-- Dashboard Page -->
+    <div id="dashboard" class="page">
+        <div class="dashboard">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1>Client Dashboard</h1>
+                    <p>Welcome back, <span id="userName">Client</span></p>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Active Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Pending Shipments</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">150K</div>
+                        <div class="stat-label">Units This Month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">On-Time Delivery</div>
+                    </div>
+                </div>
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" onclick="switchTab('active-orders')">Active Orders</button>
+                    <button class="tab-btn" onclick="switchTab('track-order')">Track Order</button>
+                    <button class="tab-btn" onclick="switchTab('new-order')">Place New Order</button>
+                    <button class="tab-btn" onclick="switchTab('messages')">Messages</button>
+                </div>
+                <!-- Active Orders Tab -->
+                <div id="active-orders" class="tab-content active">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order #THM-2024-1247</h3>
+                            <span class="status-badge in-transit">In Transit</span>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Product</span>
+                                <span class="detail-value">Cotton T-Shirts</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity</span>
+                                <span class="detail-value">50,000 units</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date</span>
+                                <span class="detail-value">Dec 15, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Est. Delivery</span>
+                                <span class="detail-value">Jan 20, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order #THM-2024-1248</h3>
+                            <span class="status-badge processing">Processing</span>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Product</span>
+                                <span class="detail-value">Denim Jeans</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity</span>
+                                <span class="detail-value">30,000 units</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date</span>
+                                <span class="detail-value">Dec 28, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Est. Delivery</span>
+                                <span class="detail-value">Feb 5, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order #THM-2024-1210</h3>
+                            <span class="status-badge delivered">Delivered</span>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Product</span>
+                                <span class="detail-value">Sports Jackets</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity</span>
+                                <span class="detail-value">25,000 units</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date</span>
+                                <span class="detail-value">Nov 10, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Delivered</span>
+                                <span class="detail-value">Dec 22, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order #THM-2025-1301</h3>
+                            <span class="status-badge pending">Pending</span>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Product</span>
+                                <span class="detail-value">Winter Coats</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity</span>
+                                <span class="detail-value">40,000 units</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date</span>
+                                <span class="detail-value">Jan 1, 2026</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Est. Delivery</span>
+                                <span class="detail-value">Feb 15, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order #THM-2025-1302</h3>
+                            <span class="status-badge processing">Processing</span>
+                        </div>
+                        <div class="order-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Product</span>
+                                <span class="detail-value">Athletic Wear</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity</span>
+                                <span class="detail-value">35,000 units</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Order Date</span>
+                                <span class="detail-value">Jan 5, 2026</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Est. Delivery</span>
+                                <span class="detail-value">Feb 10, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Track Order Tab -->
+                <div id="track-order" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order #THM-2024-1247 Tracking</h3>
+                            <span class="status-badge in-transit">In Transit</span>
+                        </div>
+                        <div class="tracking-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dec 15, 2025</div>
+                                <div class="timeline-title">Order Placed</div>
+                                <div class="timeline-desc">Order confirmed and payment received</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dec 18, 2025</div>
+                                <div class="timeline-title">Production Started</div>
+                                <div class="timeline-desc">Manufacturing initiated at partner facility</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Dec 28, 2025</div>
+                                <div class="timeline-title">Quality Check Completed</div>
+                                <div class="timeline-desc">All items passed inspection protocols</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Jan 2, 2026</div>
+                                <div class="timeline-title">Shipped</div>
+                                <div class="timeline-desc">Container loaded and departed from Chittagong Port</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Pending</div>
+                                <div class="timeline-title">Expected Delivery</div>
+                                <div class="timeline-desc">Estimated arrival: Jan 20, 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Order Tab -->
+                <div id="new-order" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Place New Order</h3>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Product Category</label>
+                                <select>
+                                    <option>Select Category</option>
+                                    <option>Textile & Apparel</option>
+                                    <option>Accessories</option>
+                                    <option>Footwear</option>
+                                    <option>Custom Items</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Product Type</label>
+                                <input type="text" placeholder="e.g., Cotton T-Shirts">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="number" placeholder="Enter quantity">
+                            </div>
+                            <div class="form-group">
+                                <label>Target Delivery Date</label>
+                                <input type="date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Specifications</label>
+                            <textarea placeholder="Enter product specifications, materials, colors, sizes, etc."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Notes</label>
+                            <textarea placeholder="Any special requirements or comments"></textarea>
+                        </div>
+                        <button class="btn-primary" onclick="submitOrder()">Submit Order Request</button>
+                    </div>
+                </div>
+                <!-- Messages Tab -->
+                <div id="messages" class="tab-content">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Direct Messages</h3>
+                        </div>
+                       
+                        <div class="message-list" id="messageList">
+                            <div class="message-item">
+                                <div class="message-header">
+                                    <span class="message-sender">THM Support Team</span>
+                                    <span class="message-time">10:30 AM</span>
+                                </div>
+                                <div class="message-body">
+                                    Your Order #THM-2024-1247 has been shipped and is currently in transit. Expected delivery: Jan 20, 2026.
+                                </div>
+                            </div>
+                            <div class="message-item sent">
+                                <div class="message-header">
+                                    <span class="message-sender">You</span>
+                                    <span class="message-time">2:15 PM</span>
+                                </div>
+                                <div class="message-body">
+                                    Thank you for the update. Can you provide the container tracking number?
+                                </div>
+                            </div>
+                            <div class="message-item">
+                                <div class="message-header">
+                                    <span class="message-sender">THM Support Team</span>
+                                    <span class="message-time">2:45 PM</span>
+                                </div>
+                                <div class="message-body">
+                                    Absolutely! Your container tracking number is: CGXU4567890. You can track it on the shipping line's website.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compose-message">
+                            <input type="text" id="messageInput" placeholder="Type your message...">
+                            <button class="btn-primary" onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top: 20px;">
+                        <div class="card-header">
+                            <h3>Email Team Directly</h3>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label>To</label>
+                            <select>
+                                <option>support@thmlimited.com</option>
+                                <option>orders@thmlimited.com</option>
+                                <option>logistics@thmlimited.com</option>
+                                <option>quality@thmlimited.com</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" placeholder="Email subject">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Type your email message here..."></textarea>
+                        </div>
+                        <button class="btn-primary" onclick="sendEmail()">Send Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Terms & Conditions Page -->
+    <div id="terms" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Terms & Conditions</h1>
+                <p>Last updated: January 06, 2026</p>
+                <h2>1. Introduction</h2>
+                <p>Welcome to THM Limited. These Terms & Conditions govern your use of our website and services. By accessing or using our site, you agree to be bound by these terms.</p>
+                <h2>2. Services</h2>
+                <p>We provide sourcing, quality control, logistics, and partnership services for apparel and related products. All services are subject to availability and our approval.</p>
+                <h2>3. User Accounts</h2>
+                <p>You must create an account to access certain features. You are responsible for maintaining the confidentiality of your account information.</p>
+                <h2>4. Orders and Payments</h2>
+                <p>Orders are subject to acceptance. Payments must be made in accordance with our invoice terms. Commissions and fees are as agreed upon.</p>
+                <h2>5. Intellectual Property</h2>
+                <p>All content on this site is owned by THM Limited or our partners. You may not use it without permission.</p>
+                <h2>6. Limitation of Liability</h2>
+                <p>We are not liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
+                <h2>7. Governing Law</h2>
+                <p>These terms are governed by the laws of Bangladesh.</p>
+                <p>If you have any questions, contact us at info@thmlimited.com.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Privacy Policy Page -->
+    <div id="privacy" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: January 06, 2026</p>
+                <h2>1. Information We Collect</h2>
+                <p>We collect personal information such as name, email, and order details when you use our services.</p>
+                <h2>2. How We Use Your Information</h2>
+                <p>Your information is used to process orders, provide services, and improve our website.</p>
+                <h2>3. Data Sharing</h2>
+                <p>We share data with manufacturing partners and logistics providers as necessary for service delivery. We do not sell your data.</p>
+                <h2>4. Security</h2>
+                <p>We implement reasonable security measures to protect your information.</p>
+                <h2>5. Your Rights</h2>
+                <p>You have the right to access, correct, or delete your personal information.</p>
+                <h2>6. Cookies</h2>
+                <p>We use cookies to enhance your browsing experience.</p>
+                <h2>7. Changes to Policy</h2>
+                <p>We may update this policy from time to time.</p>
+                <p>Contact us at info@thmlimited.com for privacy concerns.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Licenses Page -->
+    <div id="licenses" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Licenses</h1>
+                <p>THM Limited operates under the following licenses and certifications:</p>
+                <ul>
+                    <li>Bangladesh Export Processing Zones Authority (BEPZA) License #12345</li>
+                    <li>ISO 9001:2015 Quality Management System Certification</li>
+                    <li>Business License from the Bangladesh Ministry of Commerce</li>
+                    <li>Environmental Compliance Certificate from the Department of Environment</li>
+                    <li>Member of Bangladesh Garment Manufacturers and Exporters Association (BGMEA)</li>
+                </ul>
+                <p>All our operations comply with international trade regulations and labor standards.</p>
+                <p>For verification or additional information, contact us at info@thmlimited.com.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Sitemap Page -->
+    <div id="sitemap" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Sitemap</h1>
+                <ul class="sitemap-list">
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a href="#about" onclick="showPage('home')">About</a></li>
+                    <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                    <li><a href="#capabilities" onclick="showPage('home')">Capabilities</a></li>
+                    <li><a href="#clients" onclick="showPage('home')">Clients</a></li>
+                    <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    <li><a onclick="showPage('login')">Login</a></li>
+                    <li><a onclick="showPage('dashboard')">Dashboard (Logged-in users only)</a></li>
+                    <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                    <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                    <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    <li><a onclick="showPage('faq')">FAQ</a></li>
+                    <li><a onclick="showPage('support')">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- FAQ Page -->
+    <div id="faq" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Frequently Asked Questions</h1>
+                <div class="faq-item">
+                    <div class="faq-question">What services does THM Limited provide?</div>
+                    <p>We offer sourcing, quality control, logistics, and partnership services for apparel manufacturing.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I place an order?</div>
+                    <p>Log in to your client dashboard and use the "Place New Order" tab.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is your average lead time?</div>
+                    <p>Lead times vary by product but typically range from 45-90 days.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you handle customs clearance?</div>
+                    <p>Yes, our logistics team manages customs and shipping worldwide.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How can I track my order?</div>
+                    <p>Use the "Track Order" tab in the dashboard for real-time updates.</p>
+                </div>
+                <p>If your question isn't answered here, contact support@thmlimited.com.</p>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <!-- Support Page -->
+    <div id="support" class="page">
+        <div class="legal-page">
+            <div class="container legal-content">
+                <h1>Support</h1>
+                <p>For assistance, please reach out through the following channels:</p>
+                <ul>
+                    <li>Email: support@thmlimited.com</li>
+                    <li>Phone: +880-2-12345678 (Business hours: 9 AM - 5 PM GMT+6)</li>
+                    <li>Client Dashboard: Use the Messages tab for direct support</li>
+                    <li>FAQ: Check our <a onclick="showPage('faq')">FAQ page</a> for common questions</li>
+                </ul>
+                <h2>Contact Form</h2>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Describe your issue"></textarea>
+                </div>
+                <button class="btn-primary" onclick="alert('Support request sent!')">Submit</button>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a href="#about" onclick="showPage('home')">About</a></li>
+                        <li><a href="#services" onclick="showPage('home')">Services</a></li>
+                        <li><a href="#contact" onclick="showPage('home')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="showPage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showPage('licenses')">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="showPage('sitemap')">Sitemap</a></li>
+                        <li><a onclick="showPage('faq')">FAQ</a></li>
+                        <li><a onclick="showPage('support')">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2026 THM Limited. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script>
+        let isLoggedIn = false;
+        // Page navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        // Login functionality
+        function handleLoginClick() {
+            if (isLoggedIn) {
+                showPage('dashboard');
+            } else {
+                showPage('login');
+            }
+        }
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+           
+            if (username && password) {
+                isLoggedIn = true;
+                document.getElementById('userName').textContent = username;
+                document.getElementById('loginNavBtn').style.display = 'none';
+                document.getElementById('logoutNavBtn').style.display = 'block';
+                showPage('dashboard');
+            } else {
+                alert('Please enter credentials');
+            }
+        }
+        function handleLogout() {
+            isLoggedIn = false;
+            document.getElementById('loginNavBtn').style.display = 'block';
+            document.getElementById('logoutNavBtn').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            showPage('home');
+        }
+        // Allow Enter key to login
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput) {
+                passwordInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        handleLogin();
+                    }
+                });
+            }
+            // Mobile nav disappear on scroll
+            let lastScroll = 0;
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (window.innerWidth <= 768) { // Only on mobile
+                    if (currentScroll > lastScroll && currentScroll > 100) {
+                        header.style.top = '-100px'; // Hide
+                    } else {
+                        header.style.top = '0'; // Show
+                    }
+                    lastScroll = currentScroll;
+                }
+            });
+        });
+        // Dashboard tabs
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+           
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+        // Submit order
+        function submitOrder() {
+            alert('Order request submitted successfully! Our team will review and contact you within 24 hours.');
+        }
+        // Send message
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const messageText = input.value.trim();
+           
+            if (messageText) {
+                const messageList = document.getElementById('messageList');
+                const now = new Date();
+                const time = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+               
+                const messageHTML = `
+                    <div class="message-item sent">
+                        <div class="message-header">
+                            <span class="message-sender">You</span>
+                            <span class="message-time">${time}</span>
+                        </div>
+                        <div class="message-body">${messageText}</div>
+                    </div>
+                `;
+               
+                messageList.insertAdjacentHTML('beforeend', messageHTML);
+                input.value = '';
+                messageList.scrollTop = messageList.scrollHeight;
+               
+                // Simulate response
+                setTimeout(() => {
+                    const responseHTML = `
+                        <div class="message-item">
+                            <div class="message-header">
+                                <span class="message-sender">THM Support Team</span>
+                                <span class="message-time">${time}</span>
+                            </div>
+                            <div class="message-body">Thank you for your message. Our team will respond shortly.</div>
+                        </div>
+                    `;
+                    messageList.insertAdjacentHTML('beforeend', responseHTML);
+                    messageList.scrollTop = messageList.scrollHeight;
+                }, 2000);
+            }
+        }
+        // Send email
+        function sendEmail() {
+            alert('Email sent successfully! You will receive a response within 24 hours.');
+        }
+    </script>
+</body>
+</html>
